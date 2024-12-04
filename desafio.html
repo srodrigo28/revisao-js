@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+<body>
+    <h1>Sistema registro de KM multa</h1>
+    <input type="text" placeholder="digite o km registrado">
+    <h3></h3>
+
+    <script>
+        var text_input = document.querySelector("input")
+
+        
+        text_input.addEventListener("change", (event) => {
+            event.preventDefault()
+            var input = Number(text_input.value)
+            if( input > 80 ){
+                var execedeu = (input - 80)
+                multa = (input - 80) * 30
+
+                alert("Valor da multa R$ " + multa)
+                document.querySelector("h3").textContent = "Valor da multa R$ " + multa.toFixed(2)
+            }
+        })
+    </script>
+</body>
+</html>
